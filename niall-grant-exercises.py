@@ -49,7 +49,7 @@ def miles_to_feet():
 
 # Converts hours and mins to seconds and
 # gets the sum of the converted hours, minutes and inputted seconds
-def to_seconds():
+def total_seconds():
     print('CONVERT TO SECONDS:')
     hour = input_int('Hour: ', 24)
     mins = input_int('Minutes: ', 60)
@@ -81,7 +81,7 @@ def main():
         print(miles_to_feet())
     
     if args[0] == '--tosec':
-        print(to_seconds())
+        print(total_seconds())
 
 
 if __name__ == "__main__":
