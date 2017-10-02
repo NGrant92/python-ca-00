@@ -44,7 +44,7 @@ def miles_to_feet():
         miles = 13
     
     total = feet * int(miles)
-    return str(miles) + ' Miles = ' + str(total) + ' Feet'
+    print(str(miles) + ' Miles = ' + str(total) + ' Feet')
 
 
 # Converts hours and mins to seconds and
@@ -60,8 +60,15 @@ def total_seconds():
     
     total_sec = hour_sec + min_sec + sec
     
-    return 'Total seconds: ' + str(total_sec)
+    print('Total seconds: ' + str(total_sec))
 
+def point_distance():
+    x0 = input_int('x0: ', '')
+    y0 = input_int('y0: ', '')
+    x1 = input_int('x1: ', '')
+    y1 = input_int('y1: ', '')
+    
+    print(str(x0) + ' ' + str(y0) + ' ' + str(x1) + ' ' + str(y1))
 
 # Default function
 def main():
@@ -71,17 +78,18 @@ def main():
     if not args:
         print('Invalid Entry.\n'
               'Usage Guide:\n'
-              'Type: "python3 file.py [--arg]"\n\n'
-              '[--arg value] options:\n'
+              'Type: "python3 file.py --arg"\n\n'
+              'Options:\n'
               'miles_to_feet:\t\t--tofeet\n'
-              'to_seconds:\t\t--tosec\n')
-    
-    # calls a certain function depending on user's specification
-    if args[0] == '--tofeet':
-        print(miles_to_feet())
-    
-    if args[0] == '--tosec':
-        print(total_seconds())
+              'to_seconds:\t\t--tosec\n'
+              'point_distance:\t\t--podist\n')
+    else:
+        # calls a certain function depending on user's specification
+        if args[0] == '--tofeet':
+            miles_to_feet()
+        
+        if args[0] == '--tosec':
+            total_seconds()
 
 
 if __name__ == "__main__":
