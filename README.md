@@ -1,7 +1,8 @@
 # Python Exercises CA
 
 ## Usage Guide:
-### TYPE: "python3 file.py --arg"
+### TYPE:
+"python3 file.py --arg"
 
 ### OPTIONS:
 - miles_to_feet:      --tofeet
