@@ -55,6 +55,14 @@ def total_seconds(hour, mins, sec):
     
     print('Total seconds: ' + str(total_sec))
 
+# To calculate the area of a rectangle
+def rectangle_area(w, h):
+    print('Area of Rectangle: ' + str(w * h) + ' inches sq')
+
+# To concat a name and age into a sentance
+def name_and_age(name, age):
+    print(name + ' is ' + age + ' years old')
+
 # Takes parameters x0, y0, x1, y1 and returns the distance between the points (x0,y0) and (x1, y1)
 def point_distance(x0, y0, x1, y1):
     
