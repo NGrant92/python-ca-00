@@ -2,41 +2,12 @@
 # Exercise for Dev Ops
 
 import sys
-
-# converts user input miles to feet
-def miles_to_feet():
-    print('MILES TO FEET:')
-    miles = 13
-    feet = 5280
+import function_exercises
     
-    total = feet * int(miles)
-    print(str(miles) + ' Miles = ' + str(total) + ' Feet')
-
-
-# Converts hours and mins to seconds and
-# gets the sum of the converted hours, minutes and inputted seconds
-def total_seconds():
-    print('CONVERT TO SECONDS:')
-    hour = 7
-    mins = 21
-    sec = 37
-    
-    hour_sec = hour * 3600
-    min_sec = mins * 60
-    
-    total_sec = hour_sec + min_sec + sec
-    
-    print('Total seconds: ' + str(total_sec))
-    
-def rectangle_area():
-    w = 7
-    h = 4
+def rectangle_area(w, h):
     print('Area of Rectangle: ' + str(w * h) + ' inches sq')
     
-def name_and_age():
-    name = 'Joe Blogs'
-    age = '35'
-    
+def name_and_age(name, age):
     print(name + ' is ' + age + ' years old')
 
 # Default function
@@ -56,16 +27,16 @@ def main():
     else:
         # calls a certain function depending on user's specification
         if args[0] == '--tofeet':
-            miles_to_feet()
+            function_exercises.miles_to_feet(13)
         
         if args[0] == '--tosec':
-            total_seconds()
+            function_exercises.total_seconds(7, 21, 37)
 
         if args[0] == '--recarea':
-            rectangle_area()
+            rectangle_area(4, 7)
 
         if args[0] == '--nameage':
-            name_and_age()
+            name_and_age('Joe Blogs', '35')
 
 
 if __name__ == "__main__":
