@@ -78,7 +78,7 @@ def point_distance(x0, y0, x1, y1):
 
 # To concat a name and age into a sentance
 def name_and_age(name, age):
-    print(name + ' is ' + str(age) + ' years old')
+    print('%s is %d years old' % (name, age))
 
 # Default function
 def main():
@@ -88,12 +88,12 @@ def main():
     if not args:
         print('Invalid Entry.\n'
               'Usage Guide:\n'
-              'Type: "python3 file.py --arg"\n\n'
-              'Options:\n'
+              'TYPE: "python3 file.py --arg"\n\n'
+              'OPTIONS:\n'
               'miles_to_feet:\t\t--tofeet\n'
               'to_seconds:\t\t--tosec\n'
               'point_distance:\t\t--pntdist\n'
-              'is_even:\t\t--iseven'
+              'is_even:\t\t--iseven\n'
               'name_and_age:\t\t--nameage')
     else:
         # calls a certain function depending on user's specification

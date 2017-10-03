@@ -12,8 +12,8 @@ def main():
     if not args:
         print('Invalid Entry.\n'
               'Usage Guide:\n'
-              'Type: "python3 file.py --arg"\n\n'
-              'Options:\n'
+              'TYPE: "python3 file.py --arg"\n\n'
+              'OPTIONS:\n'
               'miles_to_feet:\t\t--tofeet\n'
               'to_seconds:\t\t--tosec\n'
               'rectangle_area:\t\t--recarea\n'
