@@ -8,8 +8,13 @@
 - miles_to_feet:      --tofeet
 - to_seconds:         --tosec
 - name_and_age:       --nameage
-- point_distance:     --pntdist   (Fo)
-- is_even:            --iseven    (Fo)
-- interval_intersect: --intersect (Fo)
+- point_distance:     --pntdist   (F)
+- is_even:            --iseven    (F)
+- interval_intersect: --intersect (F)
+- rectangle_area:     --recarea   (E)
 
-(Fo) = functions.py ONLY
+(F) - functions.py ONLY
+(E) - expressions.py ONLY
+
+expressions.py: Exercises 1 - 4
+functions.py: Exercises 5 - 10
