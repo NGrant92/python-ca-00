@@ -99,16 +99,9 @@ def main():
     
     # Checking if user specified function to use
     if not args:
-        print('Invalid Entry.\n'
-              'Usage Guide:\n'
-              'TYPE: "python3 file.py --arg"\n\n'
-              'OPTIONS:\n'
-              'miles_to_feet:\t\t--tofeet\n'
-              'to_seconds:\t\t--tosec\n'
-              'point_distance:\t\t--pntdist\n'
-              'is_even:\t\t--iseven\n'
-              'interval_intersect:\t--intersect\n'
-              'name_and_age:\t\t--nameage')
+        menu = open('menu.txt', 'rU')
+        print(menu.read())
+        
     else:
         # calls a certain function depending on user's specification
         # asks user for input if required by the method
@@ -116,28 +109,28 @@ def main():
             print('MILES TO FEET:')
             miles = input_int('No. of Miles: ', '')
             miles_to_feet(miles)
-        
-        if args[0] == '--tosec':
+
+        elif args[0] == '--tosec':
             print('CONVERT TO SECONDS:')
             hour = input_int('Hour: ', 24)
             mins = input_int('Minutes: ', 60)
             sec = input_int('Seconds: ', 60)
             total_seconds(hour, mins, sec)
-        
-        if args[0] == '--pntdist':
+
+        elif args[0] == '--pntdist':
             print('DISTANCE BETWEEN TWO POINTS:')
             x0 = input_int('x0: ', '')
             y0 = input_int('y0: ', '')
             x1 = input_int('x1: ', '')
             y1 = input_int('y1: ', '')
             point_distance(x0, y0, x1, y1)
-        
-        if args[0] == '--iseven':
+
+        elif args[0] == '--iseven':
             print('IS EVEN?:')
             num = input_int('Enter a number: ', '')
             is_even(num)
-        
-        if args[0] == '--intersect':
+
+        elif args[0] == '--intersect':
             print('INTERVAL INTERSECT:')
             print('Points: (a,b) and (c,d)')
             a = input_int('Point a: ', '')
@@ -145,12 +138,16 @@ def main():
             c = input_int('Point c: ', '')
             d = input_int('Point d: ', '')
             interval_intersect(a, b, c, d)
-        
-        if args[0] == '--nameage':
+
+        elif args[0] == '--nameage':
             print('NAME AND AGE:')
             name = input('Name: ')
             age = input_int('Age: ', '')
             name_and_age(name, age)
+            
+        else:
+            menu = open('menu.txt', 'rU')
+            print('INVALID INPUT\n' + menu.read())
 
 if __name__ == "__main__":
     main()

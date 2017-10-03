@@ -1,10 +1,14 @@
-'Invalid Entry.\n'
-'Usage Guide:\n'
-'TYPE: "python3 file.py --arg"\n\n'
-'OPTIONS:\n'
-'miles_to_feet:\t\t--tofeet\n'
-'to_seconds:\t\t--tosec\n'
-'point_distance:\t\t--pntdist\n'
-'is_even:\t\t--iseven\n'
-'interval_intersect:\t--intersect\n'
-'name_and_age:\t\t--nameage'
+
+~~~~~~~~ Usage Guide ~~~~~~~~
+TYPE: "python3 file.py --arg"
+
+OPTIONS:
+miles_to_feet:      --tofeet
+to_seconds:         --tosec
+name_and_age:       --nameage
+point_distance:     --pntdist   (Fo)
+is_even:            --iseven    (Fo)
+interval_intersect: --intersect (Fo)
+
+(Fo) = functions.py ONLY
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
