@@ -59,9 +59,12 @@ def total_seconds(hour, mins, sec):
 def rectangle_area(w, h):
     print('Area of Rectangle: ' + str(w * h) + ' inches sq')
 
-# To concat a name and age into a sentance
-def name_and_age(name, age):
-    print(name + ' is ' + age + ' years old')
+# Determines if a number is even or not
+def is_even(num):
+    if num % 2 == 0:
+        print(str(num) + ' is an even number.')
+    else:
+        print(str(num) + ' is an odd number.')
 
 # Takes parameters x0, y0, x1, y1 and returns the distance between the points (x0,y0) and (x1, y1)
 def point_distance(x0, y0, x1, y1):
@@ -72,6 +75,10 @@ def point_distance(x0, y0, x1, y1):
     # prints result to screen
     print('Distance Between points (' + str(x0) + ',' + str(y0) + ') and (' + str(x1) + ',' + str(y1) + ')')
     print('Total Dist: ' + str(dist))
+
+# To concat a name and age into a sentance
+def name_and_age(name, age):
+    print(name + ' is ' + str(age) + ' years old')
 
 # Default function
 def main():
@@ -85,7 +92,9 @@ def main():
               'Options:\n'
               'miles_to_feet:\t\t--tofeet\n'
               'to_seconds:\t\t--tosec\n'
-              'point_distance:\t\t--pntdist\n')
+              'point_distance:\t\t--pntdist\n'
+              'is_even:\t\t--iseven'
+              'name_and_age:\t\t--nameage')
     else:
         # calls a certain function depending on user's specification
         # asks user for input if required by the method
@@ -102,11 +111,23 @@ def main():
             total_seconds(hour, mins, sec)
         
         if args[0] == '--pntdist':
+            print('DISTANCE BETWEEN TWO POINTS:')
             x0 = input_int('x0: ', '')
             y0 = input_int('y0: ', '')
             x1 = input_int('x1: ', '')
             y1 = input_int('y1: ', '')
             point_distance(x0, y0, x1, y1)
+        
+        if args[0] == '--iseven':
+            print('IS EVEN?:')
+            num = input_int('Enter a number: ', '')
+            is_even(num)
+        
+        if args[0] == '--nameage':
+            print('NAME AND AGE:')
+            name = input('Name: ')
+            age = input_int('Age: ', '')
+            name_and_age(name, age)
 
 if __name__ == "__main__":
     main()
