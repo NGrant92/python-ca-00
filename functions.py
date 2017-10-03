@@ -76,6 +76,19 @@ def point_distance(x0, y0, x1, y1):
     print('Distance Between points (' + str(x0) + ',' + str(y0) + ') and (' + str(x1) + ',' + str(y1) + ')')
     print('Total Dist: ' + str(dist))
 
+# Checks if two points intersect
+def interval_intersect(a, b, c, d):
+    # Checking if (a,b) is in range of (c,d) result is in the form of a boolean
+    intersect = a in range(c, d) or b in range(c, d)
+    # A string to be printed later
+    points = '(%d, %d) and (%d, %d)' % (a, b, c, d)
+    
+    # Prints to user results
+    if intersect:
+        print(points + ' intersect')
+    else:
+        print(points + ' DO NOT intersect')
+
 # To concat a name and age into a sentance
 def name_and_age(name, age):
     print('%s is %d years old' % (name, age))
@@ -94,6 +107,7 @@ def main():
               'to_seconds:\t\t--tosec\n'
               'point_distance:\t\t--pntdist\n'
               'is_even:\t\t--iseven\n'
+              'interval_intersect:\t--intersect\n'
               'name_and_age:\t\t--nameage')
     else:
         # calls a certain function depending on user's specification
@@ -122,6 +136,15 @@ def main():
             print('IS EVEN?:')
             num = input_int('Enter a number: ', '')
             is_even(num)
+        
+        if args[0] == '--intersect':
+            print('INTERVAL INTERSECT:')
+            print('Points: (a,b) and (c,d)')
+            a = input_int('Point a: ', '')
+            b = input_int('Point b: ', '')
+            c = input_int('Point c: ', '')
+            d = input_int('Point d: ', '')
+            interval_intersect(a, b, c, d)
         
         if args[0] == '--nameage':
             print('NAME AND AGE:')
