@@ -2,7 +2,7 @@
 # Exercise for Dev Ops
 
 import sys
-
+import math
 
 # prompt: Message for user
 # high: the max number input can't go over
@@ -35,9 +35,7 @@ def input_int(prompt, high):
 
 
 # converts user input miles to feet
-def miles_to_feet():
-    print('MILES TO FEET:')
-    miles = input_int('No. of Miles: ', '')
+def miles_to_feet(miles):
     feet = 5280
     if not miles:
         print('No valid input detected. Miles value defaults to 13')
@@ -49,12 +47,7 @@ def miles_to_feet():
 
 # Converts hours and mins to seconds and
 # gets the sum of the converted hours, minutes and inputted seconds
-def total_seconds():
-    print('CONVERT TO SECONDS:')
-    hour = input_int('Hour: ', 24)
-    mins = input_int('Minutes: ', 60)
-    sec = input_int('Seconds: ', 60)
-    
+def total_seconds(hour, mins, sec):
     hour_sec = hour * 3600
     min_sec = mins * 60
     
@@ -62,13 +55,15 @@ def total_seconds():
     
     print('Total seconds: ' + str(total_sec))
 
-def point_distance():
-    x0 = input_int('x0: ', '')
-    y0 = input_int('y0: ', '')
-    x1 = input_int('x1: ', '')
-    y1 = input_int('y1: ', '')
+# Takes parameters x0, y0, x1, y1 and returns the distance between the points (x0,y0) and (x1, y1)
+def point_distance(x0, y0, x1, y1):
     
-    print(str(x0) + ' ' + str(y0) + ' ' + str(x1) + ' ' + str(y1))
+    point_calc = (x1 - x0)**2 + (y1 - y0)**2
+    dist = int(math.sqrt(point_calc))
+    
+    # prints result to screen
+    print('Distance Between points (' + str(x0) + ',' + str(y0) + ') and (' + str(x1) + ',' + str(y1) + ')')
+    print('Total Dist: ' + str(dist))
 
 # Default function
 def main():
@@ -82,15 +77,28 @@ def main():
               'Options:\n'
               'miles_to_feet:\t\t--tofeet\n'
               'to_seconds:\t\t--tosec\n'
-              'point_distance:\t\t--podist\n')
+              'point_distance:\t\t--pntdist\n')
     else:
         # calls a certain function depending on user's specification
+        # asks user for input if required by the method
         if args[0] == '--tofeet':
-            miles_to_feet()
+            print('MILES TO FEET:')
+            miles = input_int('No. of Miles: ', '')
+            miles_to_feet(miles)
         
         if args[0] == '--tosec':
-            total_seconds()
-
+            print('CONVERT TO SECONDS:')
+            hour = input_int('Hour: ', 24)
+            mins = input_int('Minutes: ', 60)
+            sec = input_int('Seconds: ', 60)
+            total_seconds(hour, mins, sec)
+        
+        if args[0] == '--pntdist':
+            x0 = input_int('x0: ', '')
+            y0 = input_int('y0: ', '')
+            x1 = input_int('x1: ', '')
+            y1 = input_int('y1: ', '')
+            point_distance(x0, y0, x1, y1)
 
 if __name__ == "__main__":
     main()
